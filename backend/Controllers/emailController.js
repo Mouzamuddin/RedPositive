@@ -1,15 +1,13 @@
 const nodemailer = require('nodemailer');
 const multer = require('multer');
-
-
-
+require('dotenv').config();
 const upload = multer();
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'mouzam.testing@gmail.com',
-    pass: 'jjca lnfd kwwk mpbp'
+    user: process.env.user,
+    pass: process.env.pass
   }
 });
 
@@ -27,8 +25,8 @@ const sendEmail = async (req, res) => {
     const userDataString = JSON.stringify(userData, null, 2);
 
     const mailOptions = {
-      from: 'mouzam.testing@gmail.com',
-      to: 'mouzamzuhair@gmail.com',
+      from: process.env.user,
+      to: process.env.toEmail,
       subject: 'Selected Users',
       html: `
       <html>
