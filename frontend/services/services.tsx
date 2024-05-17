@@ -6,7 +6,7 @@ import axios from 'axios';
 // Function to get user data
 export const getUserData = async () => {
     try {
-        const response = await axios.get("http://localhost:3000/api/users");
+        const response = await axios.get("https://redpositive-im2y.onrender.com/api/users");
         return response.data;
         // Assuming your API returns an array of data similar to your `data` array
     } catch (error) {
