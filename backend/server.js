@@ -8,8 +8,6 @@ const userRoutes = require("./Routes/userRoutes");
 const emailRoutes = require("./Routes/emailRoutes");
 
 const mongoUrl = process.env.mongoUrl;
-console.log(process.env.mongoUrl);
-
 const dbName = process.env.dbName;
 
 app.use(express.json());
